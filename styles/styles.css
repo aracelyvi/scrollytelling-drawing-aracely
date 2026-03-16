@@ -1,0 +1,59 @@
+/* styles/styles.css */
+body {
+  margin: 0;
+  background-color: var(--color-neutral-1);
+  color: var(--color-neutral-2);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* The Canvas Wrapper */
+.section {
+  min-height: 100svh;
+  display: flex;
+  position: relative;
+  padding: var(--space-xl);
+  box-sizing: border-box;
+  /* Paper Texture Simulation */
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+}
+
+/* The Blue Tape (Desktop 1 & 2) */
+.section--taped::before, .section--taped::after {
+  content: "";
+  position: absolute;
+  background-color: var(--color-accent);
+  z-index: 10;
+  opacity: 0.9;
+}
+
+/* Horizontal Tape */
+.section--taped::before {
+  top: 20px; left: 0; right: 0; height: var(--tape-width);
+  transform: rotate(-0.5deg); /* Asymmetric/Gritty */
+}
+
+/* Vertical Tape */
+.section--taped::after {
+  left: 20px; top: 0; bottom: 0; width: var(--tape-width);
+  transform: rotate(0.3deg);
+}
+
+/* Content Area */
+.section__content {
+  max-width: 800px;
+  margin: auto;
+  z-index: 5;
+}
+
+h1, h2 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+}
+
+/* Smudge Rule: Section Transitions */
+.section {
+  border-bottom: 8px solid var(--color-primary);
+  /* This creates a "dusty" divider feel */
+  mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+}
