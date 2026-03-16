@@ -2,18 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
 :root {
-  /* Colors from Visual Guide */
-  --color-cover: #3D2B19;    /* Dark brown sketchbook border */
-  --color-paper: #EFEBE4;    /* Light cream/linen paper */
-  --color-tape: #5289D8;     /* Vibrant blue masking tape */
-  --color-charcoal: #1A1A1A; /* Text and marks */
-  --color-ink: #4B3D0B;      /* Secondary dark accents */
-
+  /* Colors from Style Tile */
+  --color-cover: #3D2B19;    /* Dark brown border */
+  --color-paper: #EFEBE4;    /* Continuous cream paper */
+  --color-tape: #5289D8;     /* Blue masking tape */
+  --color-charcoal: #1A1A1A; /* Text and stick color */
+  --color-dust: #D1D1D1;     /* Secondary gray */
+  
   /* Typography */
   --font-sketch: 'Architects Daughter', cursive;
-
-  /* Layout */
-  --cover-thickness: 40px;   /* The thick dark outer border */
-  --tape-width: 25px;        /* The blue masking tape thickness */
+  
+  /* Layout Constants */
+  --cover-thickness: 40px;
+  --tape-width: 25px;
+  --gutter-width: 70px;      /* Increased to fit the 3x bigger sticks */
   --max-content-width: 600px;
 }

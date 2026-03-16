@@ -1,4 +1,4 @@
-/* 1. The Continuous Background */
+/* 1. Continuous Background & Reset */
 body {
   margin: 0;
   background-color: var(--color-paper);
@@ -8,12 +8,12 @@ body {
   overflow-x: hidden;
 }
 
-/* 2. The Fixed UI (Cover and Tape) */
+/* 2. Fixed UI Frame */
 .sketchbook-frame {
   position: fixed;
   inset: 0;
-  z-index: 100; /* Stays above the scrolling text */
-  pointer-events: none; /* Allows scrolling the text underneath */
+  z-index: 1000;
+  pointer-events: none;
 }
 
 .outer-cover {
@@ -24,49 +24,74 @@ body {
 
 .blue-tape {
   position: absolute;
-  /* Positions the tape inside the cover with the gutter showing */
   inset: calc(var(--cover-thickness) + var(--gutter-width));
   border: var(--tape-width) solid var(--color-tape);
 }
 
-/* 3. The Scrolling Content */
+/* 3. Layout Rhythm */
 .section {
   min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 25vw; /* Keeps text inside the blue tape boundaries */
-  box-sizing: border-box;
+  padding: 0 25vw; /* Keeps text within the tape boundaries */
+  position: relative;
 }
 
 .content-wrapper {
   max-width: var(--max-content-width);
   text-align: center;
+  position: relative;
+  z-index: 10;
 }
 
-.js-label {
-  font-size: 0.9rem;
-  background: rgba(0,0,0,0.05);
-  padding: 5px 10px;
-  display: inline-block;
-  margin-top: 20px;
-}
-
-/* 4. Visual Elements */
-.sticks-in-gutter {
+/* 4. The Juxtaposed Charcoal Sticks (3x Size) */
+.gutter-sticks {
   position: absolute;
-  left: 60px; /* Positions sticks in the white space outside the tape */
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  /* Placed in the white gutter between cover and tape */
+  left: 60px; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 500px;
 }
 
 .stick {
-  width: 12px;
-  height: 80px;
+  position: absolute;
   background: var(--color-charcoal);
-  transform: rotate(-3deg);
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
 }
 
-h1 { font-size: 3.5rem; margin-bottom: 0; }
-h2 { font-size: 2.2rem; }
+.stick--one {
+  width: 55px;
+  height: 320px;
+  left: 0;
+  top: 0;
+  transform: rotate(-5deg);
+}
+
+.stick--two {
+  width: 45px;
+  height: 420px;
+  left: 40px; /* Juxtaposed / Overlapping */
+  top: 60px;  /* Staggered vertically */
+  transform: rotate(4deg);
+  opacity: 0.95;
+  border-radius: 4px 4px 0 0;
+}
+
+/* 5. Typography & Details */
+h1 { font-size: 3.5rem; margin: 0; }
+h2 { font-size: 2.2rem; margin: 0; }
+
+.js-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  background: var(--color-dust);
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
