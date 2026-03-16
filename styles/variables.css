@@ -2,15 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
 :root {
-  --color-paper: #F5F3ED;
-  --color-charcoal: #1A1A1A;
-  --color-tape: #5289D8;
-  --color-dust: #D1D1D1;
-  
-  --font-main: 'Architects Daughter', cursive;
+  /* Colors from Visual Guide */
+  --color-cover: #3D2B19;    /* Dark brown sketchbook border */
+  --color-paper: #EFEBE4;    /* Light cream/linen paper */
+  --color-tape: #5289D8;     /* Vibrant blue masking tape */
+  --color-charcoal: #1A1A1A; /* Text and marks */
+  --color-ink: #4B3D0B;      /* Secondary dark accents */
 
-  /* Layout Constants */
-  --tape-width: 30px;
-  --gutter-size: 80px; /* Space outside the tape for variables */
-  --max-width: 800px;
+  /* Typography */
+  --font-sketch: 'Architects Daughter', cursive;
+
+  /* Layout */
+  --cover-thickness: 40px;   /* The thick dark outer border */
+  --tape-width: 25px;        /* The blue masking tape thickness */
+  --max-content-width: 600px;
 }

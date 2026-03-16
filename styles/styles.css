@@ -1,77 +1,72 @@
-/* Base Layout */
+/* 1. The Continuous Background */
 body {
   margin: 0;
   background-color: var(--color-paper);
   background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-  font-family: var(--font-main);
+  font-family: var(--font-sketch);
   color: var(--color-charcoal);
   overflow-x: hidden;
 }
 
-/* The Masking Tape */
-.tape-frame {
+/* 2. The Fixed UI (Cover and Tape) */
+.sketchbook-frame {
   position: fixed;
-  inset: var(--gutter-size); /* This leaves the "Gutter" visible outside */
-  border: var(--tape-width) solid var(--color-tape);
-  z-index: 100;
-  pointer-events: none;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  inset: 0;
+  z-index: 100; /* Stays above the scrolling text */
+  pointer-events: none; /* Allows scrolling the text underneath */
 }
 
+.outer-cover {
+  position: absolute;
+  inset: 0;
+  border: var(--cover-thickness) solid var(--color-cover);
+}
+
+.blue-tape {
+  position: absolute;
+  /* Positions the tape inside the cover with the gutter showing */
+  inset: calc(var(--cover-thickness) + var(--gutter-width));
+  border: var(--tape-width) solid var(--color-tape);
+}
+
+/* 3. The Scrolling Content */
 .section {
   min-height: 100svh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
-  padding: 0 var(--gutter-size);
+  justify-content: center;
+  padding: 0 25vw; /* Keeps text inside the blue tape boundaries */
+  box-sizing: border-box;
 }
 
-.section__content {
-  max-width: var(--max-width);
+.content-wrapper {
+  max-width: var(--max-content-width);
   text-align: center;
-  z-index: 10;
 }
 
-/* Chapter 2: The Gutter Elements (Variables) */
-.charcoal-kit {
+.js-label {
+  font-size: 0.9rem;
+  background: rgba(0,0,0,0.05);
+  padding: 5px 10px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* 4. Visual Elements */
+.sticks-in-gutter {
   position: absolute;
-  left: 10px; /* Sits inside the gutter, outside the tape */
+  left: 60px; /* Positions sticks in the white space outside the tape */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .stick {
-  width: 15px;
-  height: 120px;
+  width: 12px;
+  height: 80px;
   background: var(--color-charcoal);
-  transform: rotate(-5deg);
-  transition: transform 0.5s ease;
+  transform: rotate(-3deg);
 }
 
-.stick--vine {
-  height: 150px;
-  width: 10px;
-  opacity: 0.8;
-  border-radius: 50% 50% 0 0;
-}
-
-/* Chapter 5: Fixative Effect */
-.fixative-mist {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(209,209,209,0.2) 0%, transparent 70%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* UI Tags */
-.tag {
-  display: inline-block;
-  background: #eee;
-  padding: 4px 12px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  font-size: 0.8rem;
-}
+h1 { font-size: 3.5rem; margin-bottom: 0; }
+h2 { font-size: 2.2rem; }
