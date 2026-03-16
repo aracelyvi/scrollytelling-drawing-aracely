@@ -9,48 +9,57 @@
 </head>
 <body>
 
-<main>
-    <section class="section section--hero section--taped" id="blank-canvas">
-        <div class="section__content">
-            <h1>The Blank Canvas</h1>
-            <p>JS Concept: <code>console.log</code></p>
-            <p>You start with a pristine, linen-bound sketchbook. To protect the paper, you’ve carefully laid down blue masking tape along the edges.</p>
-        </div>
-    </section>
+    <div class="tape-frame"></div>
 
-    <section class="section section--chapter section--taped" id="variables">
-        <div class="section__content">
-            <h2>Selecting the Sticks</h2>
-            <p>JS Concept: <code>let / const</code></p>
-            <p>You reach into your kit... organizing permanent compressed charcoal and flexible vine sticks.</p>
-        </div>
-    </section>
+    <main>
+        <section class="section" id="canvas-home">
+            <div class="section__content">
+                <h1>The Blank Canvas</h1>
+                <p class="tag">JS: console.log</p>
+                <p>A pristine, linen-bound sketchbook. Blue masking tape defines the "safe" boundaries of the potential ahead.</p>
+            </div>
+        </section>
 
-    <section class="section section--chapter" id="events" style="background-color: var(--color-secondary);">
-        <div class="section__content">
-            <h2>The First Interaction</h2>
-            <p>JS Concept: <code>addEventListener</code></p>
-            <p>The physical friction of charcoal against the "tooth" of the paper creates a broad, chaotic sweep of gray.</p>
-        </div>
-    </section>
+        <section class="section" id="inventory">
+            <div class="charcoal-kit">
+                <div class="stick stick--compressed"></div>
+                <div class="stick stick--vine"></div>
+            </div>
+            <div class="section__content">
+                <h2>Selecting the Sticks</h2>
+                <p class="tag">JS: let / const</p>
+                <p>Organizing the tools. Naming and storing data before a single mark is made.</p>
+            </div>
+        </section>
 
-    <section class="section section--chapter" id="classlist">
-        <div class="section__content">
-            <h2>Peeling the Tape</h2>
-            <p>JS Concept: <code>classList.toggle</code></p>
-            <p>As the tape comes up, the messy overspill is gone, revealing a perfectly sharp, professional white border.</p>
-        </div>
-    </section>
+        <section class="section" id="scribble">
+            <div class="scribble-container">
+                </div>
+            <div class="section__content">
+                <h2>The First Interaction</h2>
+                <p class="tag">JS: addEventListener</p>
+                <p>Friction against the "tooth" of the paper. The page reacts to your movement.</p>
+            </div>
+        </section>
 
-    <section class="section section--chapter" id="localstorage" style="background-color: var(--color-neutral-3);">
-        <div class="section__content">
-            <h2>The Fixative Spray</h2>
-            <p>JS Concept: <code>localStorage</code></p>
-            <p>Locking the particles into the fibers of the paper forever. The sketchbook can now be closed and reopened.</p>
-        </div>
-    </section>
-</main>
+        <section class="section" id="reveal">
+            <div class="section__content">
+                <h2>Peeling the Tape</h2>
+                <p class="tag">JS: classList.toggle</p>
+                <p>The blue tape comes up. The messy overspill vanishes, leaving a sharp, professional border.</p>
+            </div>
+        </section>
 
-<script src="scripts/main.js"></script>
+        <section class="section" id="fixative">
+            <div class="fixative-mist"></div>
+            <div class="section__content">
+                <h2>The Fixative Spray</h2>
+                <p class="tag">JS: localStorage</p>
+                <p>Locking the particles into the fibers forever. Marks that "stick" even after the book is closed.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>

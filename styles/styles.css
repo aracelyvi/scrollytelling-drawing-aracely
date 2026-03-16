@@ -1,59 +1,77 @@
-/* styles/styles.css */
+/* Base Layout */
 body {
   margin: 0;
-  background-color: var(--color-neutral-1);
-  color: var(--color-neutral-2);
-  font-family: var(--font-body);
+  background-color: var(--color-paper);
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  font-family: var(--font-main);
+  color: var(--color-charcoal);
   overflow-x: hidden;
 }
 
-/* The Canvas Wrapper */
+/* The Masking Tape */
+.tape-frame {
+  position: fixed;
+  inset: var(--gutter-size); /* This leaves the "Gutter" visible outside */
+  border: var(--tape-width) solid var(--color-tape);
+  z-index: 100;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
 .section {
   min-height: 100svh;
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  padding: var(--space-xl);
-  box-sizing: border-box;
-  /* Paper Texture Simulation */
-  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  padding: 0 var(--gutter-size);
 }
 
-/* The Blue Tape (Desktop 1 & 2) */
-.section--taped::before, .section--taped::after {
-  content: "";
-  position: absolute;
-  background-color: var(--color-accent);
-  z-index: 10;
-  opacity: 0.9;
-}
-
-/* Horizontal Tape */
-.section--taped::before {
-  top: 20px; left: 0; right: 0; height: var(--tape-width);
-  transform: rotate(-0.5deg); /* Asymmetric/Gritty */
-}
-
-/* Vertical Tape */
-.section--taped::after {
-  left: 20px; top: 0; bottom: 0; width: var(--tape-width);
-  transform: rotate(0.3deg);
-}
-
-/* Content Area */
 .section__content {
-  max-width: 800px;
-  margin: auto;
-  z-index: 5;
+  max-width: var(--max-width);
+  text-align: center;
+  z-index: 10;
 }
 
-h1, h2 {
-  font-family: var(--font-heading);
-  text-transform: uppercase;
+/* Chapter 2: The Gutter Elements (Variables) */
+.charcoal-kit {
+  position: absolute;
+  left: 10px; /* Sits inside the gutter, outside the tape */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Smudge Rule: Section Transitions */
-.section {
-  border-bottom: 8px solid var(--color-primary);
-  /* This creates a "dusty" divider feel */
-  mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+.stick {
+  width: 15px;
+  height: 120px;
+  background: var(--color-charcoal);
+  transform: rotate(-5deg);
+  transition: transform 0.5s ease;
+}
+
+.stick--vine {
+  height: 150px;
+  width: 10px;
+  opacity: 0.8;
+  border-radius: 50% 50% 0 0;
+}
+
+/* Chapter 5: Fixative Effect */
+.fixative-mist {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(209,209,209,0.2) 0%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* UI Tags */
+.tag {
+  display: inline-block;
+  background: #eee;
+  padding: 4px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  font-size: 0.8rem;
 }
