@@ -11,59 +11,90 @@
 
     <div class="sketchbook-frame">
         <div class="outer-cover"></div>
-        <div class="blue-tape" id="main-tape"></div>
+        <div class="tape-container">
+            <div class="tape-strip top"></div>
+            <div class="tape-strip right"></div>
+            <div class="tape-strip bottom"></div>
+            <div class="tape-strip left"></div>
+        </div>
     </div>
 
     <main>
         <section class="section" id="chapter-1">
             <div class="content-wrapper">
+                <div class="icon-box">
+                    <svg id="loop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/>
+                    </svg>
+                    <p>The Process</p>
+                </div>
                 <h1>The Blank Canvas</h1>
                 <p class="js-label">console.log</p>
-                <p>Pure potential. The boundaries are set. The project is initialized.</p>
+                <p>Pure potential. The project is initialized.</p>
             </div>
         </section>
 
         <section class="section" id="chapter-2">
             <div class="gutter-sticks">
-                <div class="stick stick--one"></div>
-                <div class="stick stick--two"></div>
+                <div class="icon-box" id="pencil-trigger">
+                    <svg id="pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/>
+                    </svg>
+                    <p>Variables</p>
+                    <span class="instruction">Click stick to pick up</span>
+                </div>
             </div>
             <div class="content-wrapper">
                 <h2>Selecting the Sticks</h2>
-                <p class="js-label">let / const</p>
-                <p>Declaring your tools. Storing data in the gutter before the first mark is made.</p>
+                <p>Declaring your tools. Storing data in the gutter.</p>
             </div>
         </section>
 
         <section class="section" id="chapter-3">
-            <div class="scribble-zone">
-                <div class="charcoal-smudge"></div>
-            </div>
+            <canvas id="drawingCanvas"></canvas>
             <div class="content-wrapper">
+                <div class="icon-box">
+                    <svg id="hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+                    </svg>
+                    <p>Events</p>
+                </div>
                 <h2>The First Interaction</h2>
-                <p class="js-label">addEventListener</p>
-                <p>Raw friction. The tooth of the paper finally meets the charcoal.</p>
+                <p>Drag your mouse across the canvas to draw.</p>
             </div>
         </section>
 
         <section class="section" id="chapter-4">
             <div class="content-wrapper">
+                <div class="icon-box">
+                    <svg id="split-path" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path class="branch" d="M12 22V12" /><path class="branch" d="M12 12L5 5" /><path class="branch" d="M12 12L19 5" />
+                        <circle cx="5" cy="5" r="1" fill="currentColor"/><circle cx="19" cy="5" r="1" fill="currentColor"/>
+                    </svg>
+                    <p>Conditionals</p>
+                </div>
                 <h2>Peeling the Tape</h2>
-                <p class="js-label">classList.toggle</p>
-                <p>The transition. Messy overspill meets a sharp, professional white border.</p>
+                <p>Click the <strong>blue tape strips</strong> to reveal the clean edge.</p>
             </div>
         </section>
 
         <section class="section" id="chapter-5">
-            <div class="fixative-overlay"></div>
+            <div class="mist-layer"></div>
             <div class="content-wrapper">
+                <div class="icon-box">
+                    <svg id="spray" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 15c0 4.4 3.6 8 8 8s8-3.6 8-8V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v10Z"/><path d="m3 7 16 0"/><path d="m7 3 0 4"/><path d="m11 3 0 4"/><path d="m15 3 0 4"/>
+                        <circle class="mist" cx="22" cy="8" r="1" fill="currentColor"/><circle class="mist" cx="24" cy="12" r="1" fill="currentColor"/><circle class="mist" cx="22" cy="16" r="1" fill="currentColor"/>
+                    </svg>
+                    <p>LocalStorage</p>
+                </div>
                 <h2>The Fixative Spray</h2>
-                <p class="js-label">localStorage</p>
-                <p>The mist settles. The data is locked. The drawing is permanent.</p>
+                <p>The mist settles. The data is locked.</p>
             </div>
         </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>

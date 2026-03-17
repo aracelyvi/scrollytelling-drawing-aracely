@@ -1,4 +1,4 @@
-/* 1. Continuous Background & Reset */
+/* --- 1. Continuous Background & Reset --- */
 body {
   margin: 0;
   background-color: var(--color-paper);
@@ -8,7 +8,7 @@ body {
   overflow-x: hidden;
 }
 
-/* 2. Fixed UI Frame */
+/* --- 2. Fixed UI & Tape Strips --- */
 .sketchbook-frame {
   position: fixed;
   inset: 0;
@@ -20,78 +20,68 @@ body {
   position: absolute;
   inset: 0;
   border: var(--cover-thickness) solid var(--color-cover);
+  transition: border-color 1s ease;
 }
 
-.blue-tape {
+.tape-container {
   position: absolute;
   inset: calc(var(--cover-thickness) + var(--gutter-width));
-  border: var(--tape-width) solid var(--color-tape);
 }
 
-/* 3. Layout Rhythm */
-.section {
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 25vw; /* Keeps text within the tape boundaries */
-  position: relative;
+.tape-strip {
+  position: absolute;
+  background-color: var(--color-tape);
+  pointer-events: auto; /* Allow clicking the tape */
+  cursor: pointer;
+  opacity: 0;
 }
 
-.content-wrapper {
-  max-width: var(--max-content-width);
+.top    { top: 0; left: 0; width: 100%; height: var(--tape-width); transform-origin: left; }
+.right  { top: 0; right: 0; width: var(--tape-width); height: 100%; transform-origin: top; }
+.bottom { bottom: 0; left: 0; width: 100%; height: var(--tape-width); transform-origin: right; }
+.left   { top: 0; left: 0; width: var(--tape-width); height: 100%; transform-origin: bottom; }
+
+/* --- 3. Interaction Canvas --- */
+#drawingCanvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  cursor: crosshair;
+}
+
+/* --- 4. Icon Box Styling --- */
+.icon-box {
+  margin-bottom: 20px;
   text-align: center;
-  position: relative;
-  z-index: 10;
 }
 
-/* 4. The Juxtaposed Charcoal Sticks (3x Size) */
-.gutter-sticks {
-  position: absolute;
-  /* Placed in the white gutter between cover and tape */
-  left: 60px; 
-  top: 50%;
-  transform: translateY(-50%);
-  width: 120px;
-  height: 500px;
+svg {
+  width: 60px;
+  height: 60px;
+  stroke: var(--color-charcoal);
+  overflow: visible;
 }
 
-.stick {
-  position: absolute;
-  background: var(--color-charcoal);
-  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
-}
+#spray .mist { fill: var(--color-tape); stroke: none; }
 
-.stick--one {
-  width: 55px;
-  height: 320px;
-  left: 0;
-  top: 0;
-  transform: rotate(-5deg);
-}
-
-.stick--two {
-  width: 45px;
-  height: 420px;
-  left: 40px; /* Juxtaposed / Overlapping */
-  top: 60px;  /* Staggered vertically */
-  transform: rotate(4deg);
-  opacity: 0.95;
-  border-radius: 4px 4px 0 0;
-}
-
-/* 5. Typography & Details */
-h1 { font-size: 3.5rem; margin: 0; }
-h2 { font-size: 2.2rem; margin: 0; }
-
-.js-label {
-  display: inline-block;
-  font-size: 0.8rem;
-  padding: 4px 12px;
-  background: var(--color-dust);
-  margin-bottom: 1.5rem;
-  border-radius: 2px;
+.instruction {
+  display: block;
+  font-size: 0.6rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  margin-top: 5px;
+  opacity: 0.5;
 }
+
+/* Initial States for GSAP */
+h1, h2, p, .icon-box, .mist-layer { opacity: 0; }
+
+.mist-layer {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  opacity: 0;
+  z-index: 5;
+}
+
+.section { min-height: 100svh; display: flex; align-items: center; justify-content: center; position: relative; }
+.content-wrapper { position: relative; z-index: 10; max-width: 600px; text-align: center; }
