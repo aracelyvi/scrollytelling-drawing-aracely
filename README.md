@@ -50,45 +50,45 @@ You will use them to:
 
 ## Build + Story
 
-- [ ] 6-8 total sections
-- [ ] 5+ JavaScript concepts represented in story chapters
-- [ ] Narrative is complete (no placeholder text)
+- [x] 6-8 total sections
+- [x] 5+ JavaScript concepts represented in story chapters
+- [x] Narrative is complete (no placeholder text)
 
 ## Motion + Scroll
 
-- [ ] 10+ intentional GSAP tweens
-- [ ] 2+ GSAP timelines
-- [ ] 8+ ScrollTrigger instances
-- [ ] 2+ scrubbed interactions
-- [ ] 1+ pinned showpiece section with 3+ internal steps
+- [x] 10+ intentional GSAP tweens
+- [x] 2+ GSAP timelines
+- [x] 8+ ScrollTrigger instances
+- [x] 2+ scrubbed interactions
+- [x] 1+ pinned showpiece section with 3+ internal steps
 
 ## Scroll Feel
 
-- [ ] ScrollSmoother configured globally (`#smooth-wrapper`, `#smooth-content`)
-- [ ] Smoother tuned for readability
-- [ ] Reduced motion users bypass smoothing/extra effects
+- [x] ScrollSmoother configured globally (`#smooth-wrapper`, `#smooth-content`)
+- [x] Smoother tuned for readability
+- [x] Reduced motion users bypass smoothing/extra effects
 
 ## Design + Theme
 
-- [ ] `tokens.css` exists and is used consistently
-- [ ] Light mode implemented
-- [ ] Dark mode implemented
+- [x] `tokens.css` exists and is used consistently
+- [x] Light mode implemented
+- [x] Dark mode implemented
 - [ ] System mode implemented
-- [ ] Mode preference persists
+- [x] Mode preference persists
 
 ## Assets
 
-- [ ] 5+ SVG assets (or instructor approved exception)
-- [ ] 3+ image/illustration assets
-- [ ] Non-decorative images include meaningful alt text
+- [x] 5+ SVG assets (or instructor approved exception)
+- [x] 3+ image/illustration assets
+- [x] Non-decorative images include meaningful alt text
 
 ## Accessibility + QA
 
-- [ ] `prefers-reduced-motion` works
+- [x] `prefers-reduced-motion` works
 - [ ] Keyboard navigation works
 - [ ] WCAG AA contrast for body text
-- [ ] No blocking console errors
-- [ ] No `markers: true` in final build
+- [x] No blocking console errors
+- [x] No `markers: true` in final build
 
 ## Reflection + README
 
