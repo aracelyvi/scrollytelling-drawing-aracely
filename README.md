@@ -94,3 +94,20 @@ You will use them to:
 
 - [ ] Reflection page includes all required prompts
 - [ ] README includes links, stack, and implementation notes
+
+## Reflection (in the README):
+
+Metaphor summary (1 paragraph)
+The metaphor I used was the process of drawing and the idea that writing code is a lot like sketching in a physical sketchbook. The charcoal sticks represent different data initializations, the "broken lines" represent the fragility of conditional logic, and the fixative spray acts as the final "lock" on the code. It’s a reminder that even in a digital space, our work can be just be messy ideas before it’s deployed.
+
+One section you're most proud of, and why
+I spent a long time trying to map everything out in a way that I felt made sense. I wanted the webpage to be very simple and minimal and I wanted the interaction of the user to play a part in it (the drawing) rather than just scrolling and clicking through. Creating the drawing aspect was fun and difficult because I had to change things little by little to make sure one part was working before moving on to the next.
+
+One technical bug you solved, and how
+A lot of the issues I had were that I wanted to create something that I didn't know how to create so I used gemini to help me create it. The interactions like the drawing were made with gemini becasue I wanted to make sure they worked well with the charcoal sticks and I wanted it to stay fixed when you scrolled down. 
+
+One accessibility decision you made
+I treid to keep contrast in mind and being able to see all the features and text. If the user draws too much then it can get lost in the background, I also tried to keep that in mind with the dark mode. 
+
+What you would improve with more time
+If I had more time I would have added more details to the background like teaxtures to make it feel more like a physical page rather than a webpage. I would have also liked to add more color and interactions or smoother transitions with the interactions I currently have. I would also like to work more on the drawing portion a bit more, I think the drawing part could be smoother and the sticks could have more charcoal details. 
